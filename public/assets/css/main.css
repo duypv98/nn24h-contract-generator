@@ -30,6 +30,10 @@ body {
   touch-action: none;
 }
 
+#customer-name {
+  width: 275px;
+}
+
 #main-contract .fill-input {
   outline: none;
   border: none;
