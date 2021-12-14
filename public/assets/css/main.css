@@ -52,6 +52,9 @@ body {
 
 #company-signature {
   width: 140px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 #company-signature img {
