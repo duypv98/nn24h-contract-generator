@@ -22,7 +22,7 @@ body {
 }
 
 #main-contract {
-  padding: 45px 100px;
+  padding: 40px 100px;
   text-align: justify;
   text-justify: inter-word;
   width: 793.92px;
@@ -51,7 +51,7 @@ body {
 }
 
 #company-signature {
-  width: 150px;
+  width: 140px;
 }
 
 #company-signature img {
@@ -59,7 +59,7 @@ body {
 }
 
 #company-stamp {
-  width: 175px;
+  width: 160px;
 }
 
 #company-stamp img {
