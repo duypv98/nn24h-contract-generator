@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contraction Generator</title>
+  <link rel="stylesheet" href="./assets/css/main.css">
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" />
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.min.js"
+    integrity="sha256-hlKLmzaRlE8SCJC1Kw8zoUbU8BxA+8kR3gseuKfMjxA=" crossorigin="anonymous"></script>
+  <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+  <script>
+    $(function () {
+      $('#date-commencement').datepicker();
+      $('#date-commencement').datepicker("option", "dateFormat", "dd/mm/yy");
+      $('#date-sign-com').datepicker();
+      $('#date-sign-com').datepicker("option", "dateFormat", "dd/mm/yy");
+      $('#date-sign').datepicker();
+      $('#date-sign').datepicker("option", "dateFormat", "dd/mm/yy");
+    });
+  </script>
+  <script src="./assets/js/main.js"></script>
+</head>
+
+<body onload="loadImages(); initCanvasSignature();">
+  <div id="root">
+    <div id="paper-wrapper">
+      <div id="main-contract">
+        <section title="heading">
+          <p><b>SHORT TERM CONTRACT</b></p>
+          <br />
+          <br />
+          <p>Date: <span id=""></span></p>
+          <br />
+        </section>
+        <!-- Main Content of the contract -->
+        <section title="main-content">
+          <p><label for="customer-name">Dear</label> <input id="customer-name" class="fill-input" spellcheck="false" />
+          </p>
+          <p>I am pleased to offer you the short term appointment. This letter contains all the details relating to your
+            appointment, including pay, notice provisions etc., and should be read carefully as it forms the contract
+            between the company and yourself.</p>
+          <p>
+            <b>Service</b>
+            <br />
+            The date of commencement of this short term appointment is <input type="text" class="fill-input date-input"
+              id="date-commencement" /> and it will last 22.5 hours of service
+            during a one-month period. You will produce video recordings as answers to provided questions. While
+            submitting
+            work weekly, you will need to attach the script file.
+          </p>
+          <p>
+            <b>Terms of the Appointment</b>
+            <br />
+            This appointment is on a short term temporary basis until Feb 15<sup>th</sup> 2021.
+          </p>
+          <p>
+            <b>Conditions of Offer of Appointment</b>
+            <br />
+            This offer is subject to you providing satisfactory documentary evidence of your entitlement to work in
+            Vietnam, in line with current immigration legislation.
+          </p>
+          <p>
+            <b>Location</b>
+            <br />
+            Your rate of pay will be 517.000 VN&#208; per hour, payable weekly at the location above.
+          </p>
+          <p>
+            <b>Confidentiality</b>
+            <br />
+            You must not, either during or at any time after the termination of your appointment, disclose any trade
+            secrets
+            or other confidential information relating to the company or any of its activities including those in
+            respect
+            of
+            which the company owes an obligation of confidence to any third party.
+          </p>
+        </section>
+        <!-- Signature -->
+        <section title="signature">
+          <!-- Company -->
+          <b>Signed on behalf of the company</b>
+          <br />
+          <div id="company-signature-stamp">
+            <div id="company-signature">
+            </div>
+            <div id="company-stamp">
+            </div>
+          </div>
+          <p>
+            <b>Date:</b><input type="text" class="fill-input date-input" id="date-sign-com" />
+          </p>
+          <!-- Customer -->
+          <p>
+            <b>PLEASE SIGN AND RETURN THE SECOND COPY OF THIS STATEMENT TO INDICATE YOUR ACCEPTANCE OF THIS OFFER</b>
+          </p>
+          <br />
+          <p>
+            <b>Signed</b>
+          </p>
+          <div id="cvs-signature"></div>
+          <p>
+            <b>Date:</b><input type="text" class="fill-input date-input" id="date-sign" />
+          </p>
+        </section>
+      </div>
+    </div>
+
+    <div id="main-function">
+      <button id="clear-signature-button" onclick="clearSignature()">Clear signature</button>
+      <button id="export-button" onclick="genContractPDF()">Export contract</button>
+    </div>
+  </div>
+
+</body>
+
+</html>
