@@ -95,7 +95,7 @@ function loadImages() {
   var signatureEl = document.getElementById("company-signature");
   var stampEl = document.getElementById("company-stamp");
   var signatureText = document.createElement("div");
-  signatureText.innerHTML = "Vũ Thị Mai Phương";
+  signatureText.innerHTML = "V&#361; Th&#7883; Mai Ph&#432;&#417;ng";
   signatureText.style.textAlign = "center";
 
   var signatureImg = document.createElement("img");
