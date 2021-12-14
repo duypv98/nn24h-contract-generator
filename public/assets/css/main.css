@@ -37,9 +37,10 @@ body {
 #main-contract .fill-input {
   outline: none;
   border: none;
-  border-bottom: 1px solid;
+  border-bottom: 1px dotted;
   font-size: 12px;
 }
+
 
 #main-contract .date-input {
   max-width: 100px;

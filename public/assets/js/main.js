@@ -84,9 +84,14 @@ function genContractPDF() {
   var doc = new jsPDF('p', 'pt', 'a4', true);
   doc.setFont('Arial', 'normal');
   var target = document.getElementById('main-contract');
-  // target.style.border = "none";
   var canvasNode = target.getElementsByTagName("canvas")[0];
   var canvasParentNode = canvasNode.parentNode;
+  var customerNameInput = document.getElementById("customer-name");
+  var customerNameSpan = document.createElement("span");
+  customerNameSpan.innerHTML = customerNameInput.value;
+  var customerNameParent = customerNameInput.parentNode;
+  customerNameParent.replaceChild(customerNameSpan, customerNameInput);
+
   var imgEl = document.createElement("img");
   imgEl.src = canvasNode.toDataURL("image/png", 1.0);
 
@@ -96,7 +101,7 @@ function genContractPDF() {
     callback: function (pdf) {
       pdf.setFont('Arial', 'normal');
       pdf.save('genContract.pdf');
-      // window.location.reload();
+      window.location.reload();
     },
     x: 0,
     y: 0,
